@@ -10,9 +10,7 @@ class Solution {
         if(merge.length%2==1){
             return merge[merge.length/2];
         }else{
-            int a=merge[merge.length/2];
-            int b=merge[(merge.length/2)-1];
-            return  (a+b)/2.0;
+            return  ((merge[merge.length/2])+(merge[(merge.length/2)-1]))/2.0;
         }
     }
 }
