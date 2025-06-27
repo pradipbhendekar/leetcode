@@ -12,7 +12,7 @@ class Solution {
             if (ch == '(' || ch == '[' || ch == '{') {
                 stack.push(ch);
             } else {
-                if (stack.isEmpty()) return false;
+                if (stack.isEmpty()) return false;  // if the stack is empty then directly we return 
 
                 char top = stack.peek();
                 if ((top == '(' && ch == ')') ||
