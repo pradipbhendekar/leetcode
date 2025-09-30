@@ -11,7 +11,7 @@ class Solution {
     //       nums[0]=temp;
     //   }
       
-          k = k % nums.length; 
+        k = k % nums.length; 
       //reverse the hole array
         int start=0;
         int end=nums.length-1;
