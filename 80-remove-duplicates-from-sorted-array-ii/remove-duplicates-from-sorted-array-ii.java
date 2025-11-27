@@ -1,20 +1,10 @@
 class Solution {
     public int removeDuplicates(int[] nums) {
-    //    int i=0;
-    //    int j=0;
-    //    while(i<nums.length && j<nums.length){
-    //        if(nums[i]==nums[j]){
-    //            j++;
-    //        }else{
-    //            i=j;
-    //        }
-    //    }
-    //     return i;
-
-    // this is the actual ans of this question usng the two pointer
-        int k=2;
-        for(int i=2;i<nums.length;i++){
-            if(nums[i]!=nums[k-2]){
+  
+    // using two pointer we are solve this question
+        int k=2;    //intially we can gives the k size 2
+        for(int i=2;i<nums.length;i++){  // apply the for loop
+            if(nums[i]!=nums[k-2]){    //check if the nums[0]!-nums[2]=true then swap the elment with the k positon
                 nums[k]=nums[i];
                 k++;
             }
