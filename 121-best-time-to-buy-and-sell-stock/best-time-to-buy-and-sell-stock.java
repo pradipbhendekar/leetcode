@@ -13,5 +13,11 @@ class Solution {
             }
         }
         return max_profit;
+
+        // this is example solve using a kadane's algorithm (must solve)
+       
+        
+       
     }
+    
 }
