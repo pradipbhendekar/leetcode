@@ -12,17 +12,21 @@ class Solution {
 
 
     public ListNode removeElements(ListNode head, int val) {
-        if(head== null){
-            return null;
+        // here we are skip first element
+        while(  head!=null && head.val==val ){
+            head=head.next;
         }
 
-        head.next=removeElements(head.next,val);
-       if(head.val==val){
-            return head.next;
-       }else{
-        return head;
+        // here we are remove the element of a linkedlist
+        ListNode current=head;
+       while(current != null && current.next != null ){
+            if(current.next.val == val){
+                current.next=current.next.next;
+            }else{
+                current=current.next;
+            }
        }
+        return head;
 
-        
     }
 }
