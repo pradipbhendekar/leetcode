@@ -1,16 +1,11 @@
 class Solution {
-    public boolean canJump(int[] nums) {
-       
-        int ljump=0;
-        if(nums.length==1) return true;
-        for(int i=0;i<nums.length;i++){
-             if(ljump<i) return false;
+    public boolean canJump(int[] arr) {
+      int ljump=0;
+      for(int i=0;i<arr.length;i++){
+        if(ljump < i) return false;
+        ljump=Math.max(ljump,arr[i]+i);
 
-            ljump=Math.max(ljump,nums[i]+i);
-
-            if(ljump>= nums.length) return true;
-
-        }   
-        return true;
+      } 
+      return true;
     }
 }
