@@ -1,21 +1,23 @@
 class Solution {
     public int lengthOfLongestSubstring(String s) {
-        
-         int left=0;
-       int maxlength=0;
-       int[] fre=new int[256];// this is create to 
-       for(int right=0;right<s.length();right++){
-           char ch=s.charAt(right);
-           fre[ch]++;   // here we are update the values appearance
-           while(fre[ch]>1){
-               fre[s.charAt(left)]--; 
-               left++;
-           }
-           maxlength=Math.max(maxlength,right-left+1); //here i am update the length value
-       }
-       
-       //System.out.println(maxlength);
-       return maxlength;
-        
+    
+        //now i am solve this using a sliding window and the hashtable
+        Map<Character,Integer> map=new HashMap<>();
+        int right=0;
+        int left=0;
+        int length=0;
+        while(left<s.length()){
+            char ch=s.charAt(left);
+            if(!map.containsKey(ch)){
+                map.put(ch,1);
+                left++;
+            }else{
+                map.remove(s.charAt(right));
+                right++;
+            }
+            length=Math.max(length,left-right);
+        }
+
+        return length;
     }
 }
